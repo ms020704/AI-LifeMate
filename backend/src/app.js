@@ -1,4 +1,5 @@
 const express = require('express')
+const healthRoutes = require('./routes/healthRoutes')
 
 const app = express()
 
@@ -9,5 +10,7 @@ app.get('/', (req, res) => {
     message: 'AI LifeMate Backend Server Running',
   })
 })
+
+app.use('/api/health', healthRoutes)
 
 module.exports = app
